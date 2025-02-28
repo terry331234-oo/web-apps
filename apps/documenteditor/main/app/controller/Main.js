@@ -1289,6 +1289,15 @@ define([
                 }
             },
 
+            onSetEditorMode: function(data) {
+                if (data && data.mode) {
+                    var mode = data.mode;
+                    var force = data.force!==undefined ? data.force : true;
+                    var disableModeButton = data.disableModeButton!==undefined ? data.disableModeButton : false;
+                    this.onDocModeApply(mode, force, disableModeButton)
+                }
+            },
+
             onDocumentContentReady: function() {
                 if (this._isDocReady)
                     return;
@@ -1541,6 +1550,8 @@ define([
                         me.onExternalMessage({msg: me.txtSaveCopyAsComplete});
                     }
                 });
+
+                Common.Gateway.on('seteditormode',          _.bind(me.onSetEditorMode, me));
 
                 Common.Gateway.sendInfo({mode:me.appOptions.isEdit?'edit':'view'});
 
