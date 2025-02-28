@@ -896,6 +896,13 @@
             });
         };
 
+        var _setEditorMode = function(data) {
+            _sendCommand({
+                command: 'setEditorMode',
+                data: data
+            })
+        }
+
         return {
             showMessage         : _showMessage,
             processSaveResult   : _processSaveResult,
@@ -928,7 +935,8 @@
             setReferenceSource: _setReferenceSource,
             openDocument: _openDocumentFromBinary,
             startFilling: _startFilling,
-            requestRoles: _requestRoles
+            requestRoles: _requestRoles,
+            setEditorMode: _setEditorMode
         }
     };
 

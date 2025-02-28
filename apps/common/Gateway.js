@@ -169,6 +169,10 @@ if (window.Common === undefined) {
 
             'requestRoles': function(data) {
                 $me.trigger('requestroles', data);
+            },
+            
+            'setEditorMode': function(data) {
+                $me.trigger('seteditormode', data);
             }
         };
 
