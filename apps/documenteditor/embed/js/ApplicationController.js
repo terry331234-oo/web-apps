@@ -636,7 +636,7 @@ DE.ApplicationController = new(function(){
             }
         });
 
-        if (appOptions.isOForm && permissions.download!==false) {
+        if (false && appOptions.isOForm && permissions.download!==false) {
             $('#id-critical-error-title').text(me.notcriticalErrorTitle);
             $('#id-critical-error-message').html(me.textConvertFormDownload);
             $('#id-critical-error-close').text(me.textDownloadPdf).off().on('click', function(){

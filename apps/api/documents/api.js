@@ -874,6 +874,13 @@
             });
         };
 
+        var _setEditorMode = function(data) {
+            _sendCommand({
+                command: 'setEditorMode',
+                data: data
+            })
+        }
+
         return {
             showMessage         : _showMessage,
             processSaveResult   : _processSaveResult,
@@ -905,7 +912,8 @@
             setRequestedSpreadsheet: _setRequestedSpreadsheet,
             setReferenceSource: _setReferenceSource,
             openDocument: _openDocumentFromBinary,
-            startFilling: _startFilling
+            startFilling: _startFilling,
+            setEditorMode: _setEditorMode
         }
     };
 
